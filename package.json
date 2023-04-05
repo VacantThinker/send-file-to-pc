@@ -1,0 +1,46 @@
+{
+  "name": "send-file-to-pc",
+  "productName": "send-file-to-pc",
+  "version": "0.0.1",
+  "description": "My Electron application description",
+  "main": ".webpack/main",
+  "scripts": {
+    "git_push": "git add . && git commit -m 'update' && git push --force",
+    "git_push_force": "git push --force",
+    "node_appjs": "node server/app.js",
+    "yarn_install": "yarn install",
+    "rebuild": "electron-rebuild -f -w better-sqlite3",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "keywords": [],
+  "author": {
+    "name": "vacantthinker"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.1.0",
+    "@electron-forge/maker-deb": "^6.1.0",
+    "@electron-forge/maker-rpm": "^6.1.0",
+    "@electron-forge/maker-squirrel": "^6.1.0",
+    "@electron-forge/maker-zip": "^6.1.0",
+    "@electron-forge/plugin-webpack": "^6.1.0",
+    "@electron-forge/publisher-github": "^6.1.1",
+    "@vercel/webpack-asset-relocator-loader": "1.7.3",
+    "css-loader": "^6.0.0",
+    "electron": "23.2.0",
+    "node-loader": "^2.0.0",
+    "style-loader": "^3.0.0"
+  },
+  "dependencies": {
+    "body-parser": "1.20.1",
+    "cors": "^2.8.5",
+    "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.18.2",
+    "update-electron-app": "^2.0.1",
+    "uuid": "8.3.2",
+    "ws": "^8.13.0"
+  }
+}

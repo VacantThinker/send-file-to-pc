@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head id="head">
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>send file to pc</title>
+
+</head>
+<body id="body">
+<div class="container-fluid" id="app">
+    <div class="row">
+        <div class="col-auto">
+            <input
+                    id="inputFile"
+                    class="form-control"
+                    type="file"/>
+        </div>
+    </div>
+    <div class="my-3">
+        <div class="progress">
+            <div id="progress"
+                 class="progress-bar bg-success" style="width:20%"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-auto">
+            <button
+                    id="btnUpload"
+                    class="btn btn-primary"
+                    type="button"
+            >
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-auto">
+            <img id="qrcode"/>
+        </div>
+    </div>
+
+</div>
+<script src="./renderer.js"></script>
+</body>
+</html>
