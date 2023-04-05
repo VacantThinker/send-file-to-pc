@@ -2,6 +2,9 @@
 
 ---
 
+## download
+[releases](./releases)
+
 ## what is this?
 ```text
 send file to pc (windows)

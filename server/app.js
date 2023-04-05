@@ -15,7 +15,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('publicapp'));
-// app.use(express.static(path.join(process.cwd(), 'publicapp')));
+app.use(express.static(path.join(process.cwd(), 'publicapp')));
 
 const socketMap = {};
 // const urlList = 'localhost';

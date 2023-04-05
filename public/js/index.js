@@ -39,7 +39,7 @@ function resetInfo() {
   inputFileElement.value = '';
   progressElement.textContent = '0';
   progressElement.style.width = `0%`;
-  btnUploadElement.textContent = '上传/Upload';
+  btnUploadElement.textContent = 'Upload';
 }
 
 function updateProgress(message) {

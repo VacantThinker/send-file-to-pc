@@ -47,7 +47,7 @@ function uploadFile() {
       method: 'POST',
       body: formData,
     };
-    fetch(input, init).then(value => value.json()).then(value => {
+    fetch(input, init).then(value => value.json()).then((value) => {
       resetInfo();
     });
   }
@@ -57,18 +57,24 @@ function resetInfo() {
   inputFileElement.value = '';
   progressElement.textContent = '0';
   progressElement.style.width = `0%`;
+  btnUploadElement.textContent = 'Upload';
+}
 
+function updateProgress(message) {
+  let {info} = message;
+  progressElement.textContent = info;
+  progressElement.style.width = info;
+  btnUploadElement.textContent = info;
 }
 
 function startFN() {
-  btnUploadElement.textContent = '上传/Upload';
+  resetInfo();
 
   setupQrcode();
   btnUploadElement.addEventListener('click', () => {
     uploadFile(inputFileElement);
   });
 
-  resetInfo();
 
   let socketGlobal = new WebSocket(wsurl);
   socketGlobal.addEventListener('open', async () => {
@@ -82,13 +88,14 @@ function startFN() {
         let message = JSON.parse(messageEvent.data);
         switch (message.action) {
           case 'updateProgress':
-            let {info} = message;
-            progressElement.textContent = info;
-            progressElement.style.width = info;
+            updateProgress(message);
             break;
           case 'uploadComplete':
             resetInfo();
             break;
+          case 'fileConvert':
+            btnUploadElement.textContent = `file converting`
+            break
         }
       });
 
